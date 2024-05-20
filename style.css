@@ -1,0 +1,92 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    background: linear-gradient(135deg, #1d16b3, #FF9500);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.81);
+    /* take up entire screen's height */
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 100px);
+    padding: 70px 18px 40px;
+    border-radius: 40px;
+}
+
+.calculator-grid>button {
+    cursor: pointer;
+    font-size: 2.2rem;
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+    margin: 5px;
+    background-color: black;
+}
+
+
+.calculator-grid .operation {
+    background: #D4D4D2;
+}
+
+.calculator-grid .operation:hover {
+    background: #838383;
+}
+
+.calculator-grid .operand {
+    background: #FF9500;
+    color: white;
+}
+
+.calculator-grid .operand:hover {
+    background: #9f9f9faa;
+}
+
+.calculator-grid .number {
+    background: #505050;
+    color: white;
+}
+
+.calculator-grid .number:hover {
+    background: #b9b9b9;
+}
+
+.output {
+    grid-column: 1 / -1;
+    /* fill the entire width of the columns */
+    display: flex;
+    /* align the items inside the container */
+    align-items: flex-end;
+    justify-content: space-around;
+    /* space out the content but not too closed to the edge */
+    flex-direction: column;
+    /* the items align certically rather than the default horizontally */
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: #D4D4D2;
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 3rem;
+}
